@@ -1,0 +1,1 @@
+# strapi-data-collections
