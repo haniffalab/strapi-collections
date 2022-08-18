@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_metadata_visiums",
+  "info": {
+    "displayName": "visium",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tissue": {
+      "type": "string"
+    },
+    "organism": {
+      "type": "string"
+    },
+    "assay": {
+      "type": "string"
+    },
+    "count": {
+      "type": "biginteger"
+    },
+    "disease": {
+      "type": "string"
+    }
+  }
+}

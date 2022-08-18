@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "data_files",
+  "info": {
+    "singularName": "data-file",
+    "pluralName": "data-files",
+    "displayName": "Data_File",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "is_external": {
+      "type": "boolean",
+      "default": false
+    },
+    "data_file_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::data-file-type.data-file-type"
+    },
+    "is_raw_data": {
+      "type": "boolean"
+    },
+    "related_urls": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::url.url"
+    },
+    "filename": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "size": {
+      "type": "biginteger"
+    },
+    "hash": {
+      "type": "text"
+    },
+    "dataset": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dataset.dataset",
+      "mappedBy": "file"
+    },
+    "datasets": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::dataset.dataset",
+      "inversedBy": "related_files"
+    },
+    "extension": {
+      "type": "string"
+    }
+  }
+}

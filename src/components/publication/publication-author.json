@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_author_publication_authors",
+  "info": {
+    "displayName": "author",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "affiliation": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "is_corresponding_author": {
+      "type": "boolean"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

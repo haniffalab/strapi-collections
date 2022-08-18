@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publications",
+  "info": {
+    "singularName": "publication",
+    "pluralName": "publications",
+    "displayName": "Publication",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "is_published": {
+      "type": "boolean",
+      "default": false
+    },
+    "publication_date": {
+      "type": "date"
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "authors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "publication.publication-author"
+    },
+    "groups": {
+      "type": "component",
+      "repeatable": true,
+      "component": "group.group"
+    },
+    "is_listed": {
+      "type": "boolean",
+      "required": true
+    },
+    "url": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::url.url"
+    },
+    "related_urls": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::url.url"
+    },
+    "abstract": {
+      "type": "text"
+    }
+  }
+}

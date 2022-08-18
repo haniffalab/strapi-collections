@@ -1,0 +1,93 @@
+{
+  "kind": "collectionType",
+  "collectionName": "datasets",
+  "info": {
+    "singularName": "dataset",
+    "pluralName": "datasets",
+    "displayName": "Dataset",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "related_urls": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::url.url"
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "mappedBy": "datasets"
+    },
+    "count": {
+      "type": "biginteger"
+    },
+    "urls": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::url.url"
+    },
+    "metadata": {
+      "type": "dynamiczone",
+      "components": [
+        "metadata.iss",
+        "metadata.scrnaseq",
+        "metadata.visium"
+      ],
+      "max": 1
+    },
+    "study": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::study.study",
+      "inversedBy": "datasets"
+    },
+    "related_studies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::study.study"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "scRNA-seq",
+        "CITE-seq",
+        "Smart-seq2",
+        "VDJ"
+      ]
+    },
+    "file": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::data-file.data-file",
+      "inversedBy": "dataset"
+    },
+    "related_files": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::data-file.data-file",
+      "mappedBy": "datasets"
+    }
+  }
+}

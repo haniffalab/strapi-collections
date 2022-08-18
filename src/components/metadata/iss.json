@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_metadata_isses",
+  "info": {
+    "displayName": "iss"
+  },
+  "options": {},
+  "attributes": {
+    "tissue": {
+      "type": "string"
+    },
+    "organism": {
+      "type": "string"
+    },
+    "assay": {
+      "type": "string"
+    },
+    "count": {
+      "type": "biginteger"
+    },
+    "disease": {
+      "type": "string"
+    }
+  }
+}

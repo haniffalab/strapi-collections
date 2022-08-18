@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "url_types",
+  "info": {
+    "singularName": "url-type",
+    "pluralName": "url-types",
+    "displayName": "URL_Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_metadata_scrnaseqs",
+  "info": {
+    "displayName": "scrnaseq",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tissue": {
+      "type": "string"
+    },
+    "organism": {
+      "type": "string"
+    },
+    "assay": {
+      "type": "string"
+    },
+    "disease": {
+      "type": "string"
+    },
+    "count": {
+      "type": "biginteger"
+    }
+  }
+}
