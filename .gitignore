@@ -102,3 +102,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# 
+app.yaml
+app.standard.yaml
+app.flexible.yaml

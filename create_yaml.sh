@@ -1,0 +1,17 @@
+#!/bin/sh
+
+FILE="app.yaml"
+/bin/cat <<EOM >$FILE
+runtime: nodejs
+env: $APP_ENV
+service: $APP_SERVICE
+env_variables:
+  HOST: $APP_HOST
+  NODE_ENV: $NODE_ENV
+  DATABASE_NAME: $DATABASE_NAME
+  DATABASE_USER: $DATABASE_USER
+  DATABASE_PASSWORD: $DATABASE_PASSWORD
+  INSTANCE_CONNECTION_NAME: $INSTANCE_CONNECTION_NAME
+beta_settings:
+  cloud_sql_instances: $INSTANCE_CONNECTION_NAME
+EOM

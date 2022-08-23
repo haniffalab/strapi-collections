@@ -7,14 +7,15 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "gcp-build": "strapi build"
   },
-  "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.3.4",
-    "@strapi/plugin-users-permissions": "4.3.4",
     "@strapi/plugin-i18n": "4.3.4",
-    "mysql": "2.18.1"
+    "@strapi/plugin-users-permissions": "4.3.4",
+    "@strapi/strapi": "4.3.4",
+    "mysql": "2.18.1",
+    "typescript": "^4.7.4"
   },
   "author": {
     "name": "A Strapi developer"
@@ -23,8 +24,8 @@
     "uuid": "beb45c55-7419-44d9-991f-f60d04235444"
   },
   "engines": {
-    "node": ">=12.x.x <=16.x.x",
-    "npm": ">=6.0.0"
+    "node": "16.14.2",
+    "npm": "8.5.0"
   },
   "license": "MIT"
 }
