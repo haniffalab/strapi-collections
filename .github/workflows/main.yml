@@ -27,9 +27,10 @@ jobs:
       - name: auth
         uses: google-github-actions/auth@v0
         with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          credentials_json: "${{ secrets.GCP_SA_KEY }}"
       
       - name: deploy
         uses: google-github-actions/deploy-appengine@v0
         with:
+          project_id: ${{ secrets.GCP_PROJECT }}
           deliverables: app.yaml
