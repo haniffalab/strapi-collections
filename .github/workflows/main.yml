@@ -20,15 +20,16 @@ jobs:
       ADMIN_JWT_SECRET: ${{ secrets.ADMIN_JWT_SECRET }}
     steps:
       - uses: actions/checkout@v3
+      
       - name: create yaml
         run: ./create_yaml.sh
       
       - name: auth
-      - uses: google-github-actions/auth@v0
+        uses: google-github-actions/auth@v0
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
       
       - name: deploy
-      - uses: google-github-actions/deploy-appengine@v0
+        uses: google-github-actions/deploy-appengine@v0
         with:
           deliverables: app.yaml
