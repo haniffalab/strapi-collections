@@ -1,0 +1,34 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      APP_ENV: ${{ secrets.APP_ENV }}
+      APP_HOST: ${{ secrets.APP_HOST }}
+      APP_SERVICE: ${{ secrets.APP_SERVICE }}
+      DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+      DATABASE_USER: ${{ secrets.DATABASE_USER }}
+      DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+      INSTANCE_CONNECTION_NAME: ${{ secrets.INSTANCE_CONNECTION_NAME }}
+      NODE_ENV: ${{ secrets.NODE_ENV }}
+      API_TOKEN_SALT: ${{ secrets.API_TOKEN_SALT }}
+      ADMIN_JWT_SECRET: ${{ secrets.ADMIN_JWT_SECRET }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: create yaml
+        run: ./create_yaml.sh
+      
+      - name: auth
+      - uses: google-github-actions/auth@v0
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+      
+      - name: deploy
+      - uses: google-github-actions/deploy-appengine@v0
+        with:
+          deliverables: app.yaml
