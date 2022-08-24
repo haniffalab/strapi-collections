@@ -20,6 +20,7 @@ jobs:
       APP_KEYS: ${{ secrets.APP_KEYS }}
       API_TOKEN_SALT: ${{ secrets.API_TOKEN_SALT }}
       ADMIN_JWT_SECRET: ${{ secrets.ADMIN_JWT_SECRET }}
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
       
     steps:
       - uses: actions/checkout@v3
