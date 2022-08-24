@@ -18,19 +18,27 @@ jobs:
       NODE_ENV: ${{ secrets.NODE_ENV }}
       API_TOKEN_SALT: ${{ secrets.API_TOKEN_SALT }}
       ADMIN_JWT_SECRET: ${{ secrets.ADMIN_JWT_SECRET }}
+      TEST: ${{ secrets.TEST }}
     steps:
       - uses: actions/checkout@v3
+      
+      - name: test
+        run: cat "$TEST"
       
       - name: create yaml
         run: ./create_yaml.sh
       
       - name: auth
         uses: google-github-actions/auth@v0
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
         with:
-          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+          credentials_json: "$GCP_SA_KEY"
       
       - name: deploy
         uses: google-github-actions/deploy-appengine@v0
+        env:
+          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
         with:
-          project_id: '${{ secrets.GCP_PROJECT }}'
+          project_id: "$GCP_PROJECT"
           deliverables: app.yaml
