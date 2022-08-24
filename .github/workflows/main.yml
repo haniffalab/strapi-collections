@@ -23,9 +23,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: test
-        run: echo '${{ secrets.TEST }}'
-      
       - name: create yaml
         run: ./create_yaml.sh
       
