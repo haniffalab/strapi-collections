@@ -16,6 +16,10 @@ env_variables:
   API_TOKEN_SALT: $API_TOKEN_SALT
   ADMIN_JWT_SECRET: $ADMIN_JWT_SECRET
   JWT_SECRET: $JWT_SECRET
+automatic_scaling:
+  min_instances: $MIN_INSTANCES
+  max_instances: $MAX_INSTANCES
+  target_cpu_utilization: $TARGET_CPU_UTILIZATION
 beta_settings:
   cloud_sql_instances: $INSTANCE_CONNECTION_NAME
 EOM
