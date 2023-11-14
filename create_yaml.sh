@@ -2,7 +2,7 @@
 
 FILE="app.yaml"
 /bin/cat <<EOM >$FILE
-runtime: nodejs16
+runtime: nodejs18
 env: $APP_ENV
 service: $APP_SERVICE
 env_variables:
