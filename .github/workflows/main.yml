@@ -21,6 +21,9 @@ jobs:
       API_TOKEN_SALT: ${{ secrets.API_TOKEN_SALT }}
       ADMIN_JWT_SECRET: ${{ secrets.ADMIN_JWT_SECRET }}
       JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      MIN_INSTANCES: ${{ secrets.MIN_INSTANCES }}
+      MAX_INSTANCES: ${{ secrets.MAX_INSTANCES }}
+      TARGET_CPU_UTILIZATION: ${{ secrets.TARGET_CPU_UTILIZATION }}
       
     steps:
       - uses: actions/checkout@v3
